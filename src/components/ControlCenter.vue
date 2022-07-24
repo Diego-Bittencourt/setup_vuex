@@ -3,9 +3,15 @@
 </template>
 
 <script>
+import { useStore } from 'vuex';
 export default {
   setup() {
-    function inc() {}
+    const store = useStore();
+    //we got access to the store by using the useStore() function inside the store();
+    //
+    function inc() {
+      store.dispatch('increment');
+    }
 
     return { inc };
   },
